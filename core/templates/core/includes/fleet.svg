@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a hot shot pickup truck towing a gooseneck flatbed loaded with equipment" style="color: var(--accent);">
+  <defs>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dd5a26" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#dd5a26" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="980" cy="230" r="180" fill="url(#sunGlow)"/>
+  <line x1="0" y1="345" x2="1200" y2="345" stroke="#34322e" stroke-width="2"/>
+  <ellipse cx="150" cy="352" rx="120" ry="9" fill="#000" opacity="0.35"/>
+  <ellipse cx="760" cy="352" rx="340" ry="9" fill="#000" opacity="0.3"/>
+  <path d="M30,345 L30,255 L120,255 L120,190 L145,158 L235,158 L262,205 L300,225 L300,345 Z" fill="#1c1b19" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M150,163 L228,163 L248,203 L165,203 Z" fill="#3a3833"/>
+  <ellipse cx="187" cy="150" rx="14" ry="7" fill="currentColor"/>
+  <circle cx="95" cy="345" r="34" fill="#0c0c0c"/><circle cx="95" cy="345" r="14" fill="#edeae4"/>
+  <circle cx="255" cy="345" r="34" fill="#0c0c0c"/><circle cx="255" cy="345" r="14" fill="#edeae4"/>
+  <rect x="300" y="238" width="45" height="8" fill="#3a3833"/>
+  <path d="M345,246 L345,268 L395,268 L410,225 L360,225 Z" fill="#1c1b19"/>
+  <rect x="395" y="268" width="700" height="16" fill="#1c1b19"/>
+  <rect x="440" y="175" width="230" height="93" fill="#4a4d51" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="440" y1="205" x2="670" y2="205" stroke="#2b2d30" stroke-width="2"/>
+  <line x1="440" y1="235" x2="670" y2="235" stroke="#2b2d30" stroke-width="2"/>
+  <rect x="710" y="222" width="290" height="46" rx="23" fill="currentColor" opacity="0.92"/>
+  <ellipse cx="710" cy="245" rx="16" ry="23" fill="#8f2a17"/>
+  <ellipse cx="1000" cy="245" rx="16" ry="23" fill="#8f2a17"/>
+  <line x1="460" y1="268" x2="470" y2="230" stroke="#8b8a86" stroke-width="2"/>
+  <line x1="650" y1="268" x2="640" y2="230" stroke="#8b8a86" stroke-width="2"/>
+  <line x1="740" y1="268" x2="740" y2="240" stroke="#8b8a86" stroke-width="2"/>
+  <line x1="960" y1="268" x2="960" y2="240" stroke="#8b8a86" stroke-width="2"/>
+  <circle cx="820" cy="345" r="30" fill="#0c0c0c"/><circle cx="820" cy="345" r="12" fill="#edeae4"/>
+  <circle cx="862" cy="345" r="30" fill="#0c0c0c"/><circle cx="862" cy="345" r="12" fill="#edeae4"/>
+  <circle cx="1000" cy="345" r="30" fill="#0c0c0c"/><circle cx="1000" cy="345" r="12" fill="#edeae4"/>
+  <circle cx="1042" cy="345" r="30" fill="#0c0c0c"/><circle cx="1042" cy="345" r="12" fill="#edeae4"/>
+  <rect x="1080" y="330" width="16" height="15" fill="#3a3833"/>
+</svg>

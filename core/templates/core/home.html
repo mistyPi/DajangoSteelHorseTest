@@ -1,0 +1,155 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section masthead" aria-label="{{ site.company_name }}">
+  <div class="wrap">
+    <img src="{% static 'core/img/logo.svg' %}" alt="{{ site.company_name }} logo">
+    <div>
+      <div class="name">{{ site.company_name }}</div>
+      <div class="tag">{{ site.tagline }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="pill">Serving BC &middot; Alberta &middot; Saskatchewan</div>
+      <h1>Hot Shot Freight,<br>Built For The <span class="accent">Oilfield</span></h1>
+      <p>Time-critical courier and flatbed hauling across Western Canada &mdash; dispatch-ready around the clock for rig-site, wellsite and oil sands deliveries.</p>
+      <div class="btn-row">
+        <a class="btn" href="#contact">Request A Pickup</a>
+        <a class="btn btn-ghost" href="tel:{{ site.phone_link }}">Call {{ site.phone }}</a>
+      </div>
+    </div>
+    <div class="status-card">
+      <div class="status-head">
+        <span class="display">Dispatch Status</span>
+        <span class="online">Online Now</span>
+      </div>
+      <dl style="margin:0; display:flex; flex-direction:column; gap:22px;">
+        <div class="status-row"><dt>Coverage</dt><dd>BC &middot; AB &middot; SK</dd></div>
+        <div class="status-row"><dt>Response Time</dt><dd>Same-Day / Next Flight Out</dd></div>
+        <div class="status-row"><dt>Certified For</dt><dd>Oilfield &amp; Rig-Site Access</dd></div>
+        <div class="status-row"><dt>Availability</dt><dd>24 / 7 / 365</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section stats" aria-label="At a glance">
+  <div class="wrap">
+    <div class="stat"><div class="display">24/7 Dispatch</div><div>Round-the-clock booking &amp; live dispatch</div></div>
+    <div class="stat"><div class="display">BC &middot; AB &middot; SK</div><div>Full Western Canada coverage</div></div>
+    <div class="stat"><div class="display">Rig-Site Certified</div><div>Cleared for oil sands &amp; wellsite access</div></div>
+    <div class="stat"><div class="display">Next-Flight-Out</div><div>Urgent freight, moving today</div></div>
+  </div>
+</section>
+
+<section id="services" class="section services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Haul</div>
+      <h2 class="h2">Freight Services</h2>
+      <p class="lead">From a single skid to a full flatbed load, our drivers know the rigs, the roads and the timelines oilfield work demands.</p>
+    </div>
+    <div class="grid-3">
+      {% for s in services %}
+      <article class="card">
+        {% include "core/includes/icon.html" with name=s.icon %}
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="coverage" class="section coverage">
+  <div class="wrap">
+    <h2 class="h2">Where We <span class="accent">Run</span></h2>
+    <p class="lead">Based out of {{ site.base_city }}, {{ site.province }}, we run scheduled and emergency freight across Western Canada &mdash; including these oil &amp; gas hubs:</p>
+    <div class="grid-4">
+      {% for a in areas %}
+      <div class="city">
+        <div class="pin"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <span>{{ a.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="fleet" class="section fleet">
+  <div class="wrap">
+    <div class="eyebrow">Our Fleet</div>
+    <h2>Heavy Haul. Hot Shot Speed.</h2>
+  </div>
+  {% include "core/includes/fleet.svg" %}
+  <p>Gooseneck flatbeds, dually pickups and rig-ready trailers &mdash; sized for skids, tanks and oilfield equipment other couriers won't touch.</p>
+</section>
+
+<section class="section cta">
+  <div class="wrap">
+    <h2 class="h2">Ready To Move? <span class="accent">Now.</span></h2>
+    <p class="lead">Call dispatch or send us your pickup and delivery details &mdash; we're moving freight around the clock across Western Canada.</p>
+    <a class="btn" href="#contact">Request A Pickup</a>
+  </div>
+</section>
+
+<section class="section why">
+  <div class="wrap">
+    <div class="why-intro">
+      <div class="eyebrow">Why Steel Horse</div>
+      <h2 class="h2">Built For Oilfield Timelines</h2>
+      <p class="lead">Standard couriers weren't built for rig access roads and site inductions. We were.</p>
+    </div>
+    <ul class="why-list">
+      {% for adv in advantages %}
+      <li>
+        <span class="check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><div class="display">{{ adv.title }}</div><div class="desc">{{ adv.description }}</div></div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="wrap">
+    <div class="contact-intro">
+      <div class="eyebrow">Request A Pickup</div>
+      <h2 class="h2">Tell Us What's Moving</h2>
+      <p class="lead">Send your pickup and delivery details and dispatch will call you back. For a down rig or anything urgent, call us directly.</p>
+      <dl>
+        <div><dt>Dispatch (24/7)</dt><dd><a href="tel:{{ site.phone_link }}">{{ site.phone }}</a></dd></div>
+        {% if site.email %}<div><dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>{% endif %}
+        <div><dt>Based in</dt><dd>{{ site.base_city }}, {{ site.province }}</dd></div>
+      </dl>
+    </div>
+
+    <form class="pickup-form" method="post" action="{% url 'home' %}#contact" novalidate>
+      {% csrf_token %}
+      {% for message in messages %}<div class="alert alert-success" role="status">{{ message }}</div>{% endfor %}
+      {% if form.errors %}<div class="alert alert-error" role="alert">Please fix the highlighted fields below.</div>{% endif %}
+
+      {% for field in form %}
+        {% if field.name == "website" %}
+          <div class="hp" aria-hidden="true"><label for="{{ field.id_for_label }}">Leave blank</label>{{ field }}</div>
+        {% else %}
+          <div class="field{% if field.name == 'load_details' or field.name == 'service' %} full{% endif %}">
+            <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span class="req" aria-hidden="true">*</span>{% endif %}</label>
+            {{ field }}
+            {% for err in field.errors %}<span class="err">{{ err }}</span>{% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="field full"><button class="btn" type="submit">Send Pickup Request</button></div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

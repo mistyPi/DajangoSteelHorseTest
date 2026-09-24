@@ -1,0 +1,71 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.company_name }} | {{ site.tagline }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}Hot shot courier and flatbed freight across BC, Alberta and Saskatchewan. 24/7 dispatch for rig-site, wellsite and oil sands deliveries.{% endblock %}">
+  <link rel="icon" href="{% static 'core/img/logo.svg' %}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'core/css/site.css' %}">
+  <style>:root { --accent: {{ site.accent_color|default:"#b3341c" }}; }</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="{% url 'home' %}">
+      <span class="logo-tile"><img src="{% static 'core/img/logo.svg' %}" alt=""></span>
+      <span class="brand-name">{{ site.company_name }}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-sm" href="#contact">Request Pickup</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <div>
+          <div class="footer-brand">
+            <span class="logo-tile"><img src="{% static 'core/img/logo.svg' %}" alt=""></span>
+            <span class="display">{{ site.company_name }}</span>
+          </div>
+          <p>Hot shot courier and flatbed freight serving British Columbia, Alberta and Saskatchewan.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          {% for s in services|slice:":4" %}<a href="#services">{{ s.title }}</a>{% endfor %}
+        </div>
+        <div>
+          <h4>Coverage</h4>
+          <a href="#coverage">Alberta</a>
+          <a href="#coverage">British Columbia</a>
+          <a href="#coverage">Saskatchewan</a>
+          <a href="#coverage">Oil Sands Region</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:{{ site.phone_link }}">{{ site.phone }}</a>
+          {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% else %}<span class="line">[EMAIL ADDRESS]</span>{% endif %}
+          <span class="line">{{ site.base_city }}, {{ site.province }}</span>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; {% now "Y" %} {{ site.company_name }}. All rights reserved.</span>
+        <span>Licensed &amp; Insured Carrier &mdash; {{ site.carrier_number }}</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
